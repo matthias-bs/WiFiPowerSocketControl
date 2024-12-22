@@ -155,6 +155,23 @@ int sendRequest(const char *url)
   return res;
 }
 
+// Function to handle WiFi events
+void WiFiEvent(WiFiEvent_t event) {
+  switch (event) {
+    case SYSTEM_EVENT_AP_START:
+      Serial.println("SoftAP started");
+      break;
+    case SYSTEM_EVENT_AP_STACONNECTED:
+      Serial.println("Station connected to SoftAP");
+      break;
+    case SYSTEM_EVENT_AP_STADISCONNECTED:
+      Serial.println("Station disconnected from SoftAP");
+      break;
+    default:
+      break;
+  }
+}
+
 void setup()
 {
   pinMode(LED_BUILTIN, OUTPUT);
@@ -174,7 +191,10 @@ void setup()
   IPAddress myIP = WiFi.softAPIP();
   Serial.print("AP IP address: ");
   Serial.println(myIP);
-
+  
+  // Register the WiFi event handler
+  WiFi.onEvent(WiFiEvent);
+  
   pinMode(buttonPin, INPUT_PULLUP);                                              // Set button pin as input with internal pull-up resistor
   attachInterrupt(digitalPinToInterrupt(buttonPin), handleButtonPress, FALLING); // Attach interrupt to button pin
 }
