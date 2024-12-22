@@ -140,10 +140,6 @@ int sendRequest(const char *url)
       {
         res = 0;
       }
-      else
-      {
-        res = -1;
-      }
     }
     else
     {
