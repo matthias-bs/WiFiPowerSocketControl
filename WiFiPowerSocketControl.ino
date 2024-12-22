@@ -81,6 +81,10 @@ const char *password = "yourPassword";
 // #define "http://delock-XXXX.local/cm?&user=admin&password=put_password_here&cmnd=Power%20on"
 // #define "http://delock-XXXX.local/cm?&user=admin&password=put_password_here&cmnd=Power%20off"
 
+// Set these to the expected HTTP responses
+#define RESPONSE_ON "\"POWER\":\"ON\""
+#define RESPONSE_OFF "\"POWER\":\"OFF\""
+
 const int buttonPin = 0;             /// GPIO pin connected to the button
 volatile bool buttonPressed = false; /// Flag to indicate that the button was pressed
 unsigned long lastDebounceTime = 0;
@@ -132,11 +136,11 @@ int sendRequest(const char *url)
     {
       String payload = http.getString();
       Serial.println(payload);
-      if (payload.indexOf("\"POWER\":\"ON\"") != -1)
+      if (payload.indexOf(RESPONSE_ON) != -1)
       {
         res = 1;
       }
-      else if (payload.indexOf("\"POWER\":\"OFF\"") != -1)
+      else if (payload.indexOf(RESPONSE_OFF) != -1)
       {
         res = 0;
       }
