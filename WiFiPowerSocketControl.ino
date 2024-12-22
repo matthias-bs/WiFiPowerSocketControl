@@ -158,13 +158,13 @@ int sendRequest(const char *url)
 // Function to handle WiFi events
 void WiFiEvent(WiFiEvent_t event) {
   switch (event) {
-    case SYSTEM_EVENT_AP_START:
+    case WIFI_EVENT_AP_START:
       Serial.println("SoftAP started");
       break;
-    case SYSTEM_EVENT_AP_STACONNECTED:
+    case WIFI_EVENT_AP_STACONNECTED:
       Serial.println("Station connected to SoftAP");
       break;
-    case SYSTEM_EVENT_AP_STADISCONNECTED:
+    case WIFI_EVENT_AP_STADISCONNECTED:
       Serial.println("Station disconnected from SoftAP");
       break;
     default:
@@ -193,6 +193,7 @@ void setup()
   Serial.println(myIP);
   
   // Register the WiFi event handler
+  // (Only used for printing information.)
   WiFi.onEvent(WiFiEvent);
   
   pinMode(buttonPin, INPUT_PULLUP);                                              // Set button pin as input with internal pull-up resistor
