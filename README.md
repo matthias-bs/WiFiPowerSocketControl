@@ -1,8 +1,8 @@
 # WiFiPowerSocketControl
 
-[![CI](https://github.com/matthias-bs/WiFiPowerSocketControl/actions/workflows/CI.yml/badge.svg)](https://github.com/matthias-bs/BresserWeatherSensorReceiver/actions/workflows/CI.yml)
+[![CI](https://github.com/matthias-bs/WiFiPowerSocketControl/actions/workflows/CI.yml/badge.svg)](https://github.com/matthias-bs/BresserWeatherSensorReceiver/actions/workflows/CI.yml)[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/matthias-bs/WiFiPowerSocketControl/blob/main/LICENSE)
 <!-- [![GitHub release](https://img.shields.io/github/release/matthias-bs/WiFiPowerSocketControl?maxAge=3600)](https://github.com/matthias-bs/WiFiPowerSocketControl/releases) -->
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/matthias-bs/WiFiPowerSocketControl/blob/main/LICENSE)
+
 
 Control a WiFi power socket switch from an ESP32 used as access point
 
