@@ -5,9 +5,9 @@
 //
 // This example demonstrated how to connect a WiFi power socket switch to an ESP32 working
 // as a WiFi access point and as HTTP client. A button connected to the ESP32 toggles the
-// switch state variable, which is indicated by a LED connected to the ESP32. When the button is
-// pressed, the ESP32 sends an HTTP request to the power socket switch to change its state
-// (on or off).
+// switch state variable, which is indicated by a LED connected to the ESP32. When the button
+// is pressed, the ESP32 sends an HTTP request to the power socket switch to change its state
+// accordingly.
 //
 // Tested with Delock 11826 (https://www.delock.com/produkt/11826/merkmale.html)
 //
@@ -20,8 +20,9 @@
 //    (see SSID and password below)
 // 3. Configure the URLs for the power socket switch below
 // 4. If available, use the ESP32 dev board's user button, otherwise connect a button to a GPIO pin
-// 5. If available, use the ESP32 dev board's variable, otherwise connect a LED to a GPIO pin
-// 6. When the button is pressed, the switch state variable and the LED state are toggled
+// 5. If available, use the ESP32 dev board's built-in LED, otherwise connect a LED to a GPIO pin
+// 6. Wait until the power socket switch has connected to the access point
+// 7. When the button is pressed, the switch state variable and the LED state are toggled
 //    and an HTTP request is sent to the power socket switch to turn it on or off
 //
 // https://github.com/matthias-bs/WiFiPowerSocketControl
