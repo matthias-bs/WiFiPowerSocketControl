@@ -12,7 +12,8 @@ switch state variable, which is indicated by a LED connected to the ESP32. When 
 pressed, the ESP32 sends an HTTP request to the power socket switch to change its state
 accordingly.
 
-Tested with [Delock 11826](https://www.delock.com/produkt/11826/merkmale.html)
+This should work with any power socket switch running [Tasmota](https://tasmota.github.io/docs/Commands/#with-web-requests).
+Tested with [Delock 11826](https://www.delock.com/produkt/11826/merkmale.html).
 
 You can implement your own logic to control the switch, e.g. based on a sensor value.
 
